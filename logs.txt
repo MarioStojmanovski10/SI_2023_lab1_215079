@@ -1,0 +1,521 @@
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ echo "import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class SILab1 {
+    public static List<Integer> filterOddNumbers(List<Integer> list) {
+        List<Integer> result = new ArrayList<>();
+        for (Integer el : list) {
+            if (el % 2 == 0) {
+                result.add(el);
+            }
+        }
+        return result;
+    }
+
+    private static int sumEvenNumbers(List<Integer> list) {
+        int sum = 1;
+        for (Integer el : list) {
+            if (el % 2 == 0) {
+                sum *= el;
+            }
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i <= n; i++) {
+            list.add(sc.nextInt());
+        }
+
+        System.out.println(filterOddNumbers(list));
+
+        System.out.println(sumEvenNumbers(list));
+    }
+}" >> SILab1.java
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git add SILab1.java
+warning: in the working copy of 'SILab1.java', LF will be replaced by CRLF the n
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git commit -m "Add java class"
+[master 5e1525d] Add java class
+ 1 file changed, 41 insertions(+)
+ create mode 100644 SILab1.java
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin master
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 632 bytes | 632.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:MarioStojmanovski10/SI_2023_lab1_215079.git
+   fff196a..5e1525d  master -> master
+branch 'master' set up to track 'origin/master'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git branch
+* master
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git branch bug1
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git branch
+  bug1
+* master
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git branch bug2
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git branch bug3
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git branch
+  bug1
+  bug2
+  bug3
+* master
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git checkout bug1
+Switched to branch 'bug1'
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug1)
+$ git branch
+* bug1
+  bug2
+  bug3
+  master
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug1)
+$ git status
+On branch bug1
+nothing to commit, working tree clean
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug1)
+$ nano SILab1.java
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug1)
+$ git status
+On branch bug1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   SILab1.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug1)
+$ git commit -m "Fix wrong loop for reading"
+On branch bug1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   SILab1.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug1)
+$ git add SILab1.java
+warning: in the working copy of 'SILab1.java', LF will be replaced by CRLF the next time Git touches it
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug1)
+$ git commit -m "Fix wrong loop for reading"
+[bug1 af5cc01] Fix wrong loop for reading
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug1)
+$ git status
+On branch bug1
+nothing to commit, working tree clean
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug1)
+$ checkout bug2
+bash: checkout: command not found
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug1)
+$ git checkout bug2
+Switched to branch 'bug2'
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug2)
+$ git branch
+  bug1
+* bug2
+  bug3
+  master
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug2)
+$ nano SILab1.java
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug2)
+$ git status
+On branch bug2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   SILab1.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug2)
+$ git add SILab1.java
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug2)
+$ git commit -m "Fix wrong condition in filterOddNumbers"
+[bug2 29b7613] Fix wrong condition in filterOddNumbers
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug2)
+$ git checkout bug3
+Switched to branch 'bug3'
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug3)
+$ git branch
+  bug1
+  bug2
+* bug3
+  master
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug3)
+$ nano SILab1.java
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug3)
+$ git add SIlab1.java
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug3)
+$ git commit -m "Fix method sumEvenNumbers"
+On branch bug3
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   SILab1.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug3)
+$ git add SILab1.java
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug3)
+$ git commit -m "Fix method sumEvenNumbers"
+[bug3 89f7ed5] Fix method sumEvenNumbers
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug3)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git branch
+  bug1
+  bug2
+  bug3
+* master
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin master
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug1
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 334 bytes | 167.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'bug1' on GitHub by visiting:
+remote:      https://github.com/MarioStojmanovski10/SI_2023_lab1_215079/pull/new/bug1
+remote:
+To github.com:MarioStojmanovski10/SI_2023_lab1_215079.git
+ * [new branch]      bug1 -> bug1
+branch 'bug1' set up to track 'origin/bug1'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug2
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 350 bytes | 70.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'bug2' on GitHub by visiting:
+remote:      https://github.com/MarioStojmanovski10/SI_2023_lab1_215079/pull/new/bug2
+remote:
+To github.com:MarioStojmanovski10/SI_2023_lab1_215079.git
+ * [new branch]      bug2 -> bug2
+branch 'bug2' set up to track 'origin/bug2'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug3
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 335 bytes | 335.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'bug3' on GitHub by visiting:
+remote:      https://github.com/MarioStojmanovski10/SI_2023_lab1_215079/pull/new/bug3
+remote:
+To github.com:MarioStojmanovski10/SI_2023_lab1_215079.git
+ * [new branch]      bug3 -> bug3
+branch 'bug3' set up to track 'origin/bug3'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git checkout master
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ ^C
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git merge bug1
+Updating 5e1525d..af5cc01
+Fast-forward
+ SILab1.java | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ ^C
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git branch
+  bug1
+  bug2
+  bug3
+* master
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin master
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:MarioStojmanovski10/SI_2023_lab1_215079.git
+   5e1525d..af5cc01  master -> master
+branch 'master' set up to track 'origin/master'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug1
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Everything up-to-date
+branch 'bug1' set up to track 'origin/bug1'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug2
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Everything up-to-date
+branch 'bug2' set up to track 'origin/bug2'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug3
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Everything up-to-date
+branch 'bug3' set up to track 'origin/bug3'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git branch
+  bug1
+  bug2
+  bug3
+* master
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git merge bug2
+Auto-merging SILab1.java
+Merge made by the 'ort' strategy.
+ SILab1.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin master
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 363 bytes | 363.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:MarioStojmanovski10/SI_2023_lab1_215079.git
+   af5cc01..0ffeadd  master -> master
+branch 'master' set up to track 'origin/master'.
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug1
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Everything up-to-date
+branch 'bug1' set up to track 'origin/bug1'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug2
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Everything up-to-date
+branch 'bug2' set up to track 'origin/bug2'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug3
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Everything up-to-date
+branch 'bug3' set up to track 'origin/bug3'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git checkout bug3
+Switched to branch 'bug3'
+Your branch is up to date with 'origin/bug3'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug3)
+$ git branch
+  bug1
+  bug2
+* bug3
+  master
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug3)
+$ git rebase master
+Successfully rebased and updated refs/heads/bug3.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug3)
+$ ^C
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug3)
+$ git branch
+  bug1
+  bug2
+* bug3
+  master
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (bug3)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git branch
+  bug1
+  bug2
+  bug3
+* master
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git merge bug3
+Updating 0ffeadd..c75ec7a
+Fast-forward
+ SILab1.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin master
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 342 bytes | 342.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:MarioStojmanovski10/SI_2023_lab1_215079.git
+   0ffeadd..c75ec7a  master -> master
+branch 'master' set up to track 'origin/master'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug1
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Everything up-to-date
+branch 'bug1' set up to track 'origin/bug1'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug2
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Everything up-to-date
+branch 'bug2' set up to track 'origin/bug2'.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug3
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+To github.com:MarioStojmanovski10/SI_2023_lab1_215079.git
+ ! [rejected]        bug3 -> bug3 (non-fast-forward)
+error: failed to push some refs to 'github.com:MarioStojmanovski10/SI_2023_lab1_215079.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push --force bug3
+fatal: 'bug3' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push --force bug3
+fatal: 'bug3' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push -u origin bug3
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+To github.com:MarioStojmanovski10/SI_2023_lab1_215079.git
+ ! [rejected]        bug3 -> bug3 (non-fast-forward)
+error: failed to push some refs to 'github.com:MarioStojmanovski10/SI_2023_lab1_215079.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ git push --force
+Enter passphrase for key '/c/Users/mario/.ssh/id_rsa':
+Everything up-to-date
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ ls
+README.md  SILab1.java
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ touch logs.txt
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ ls
+README.md  SILab1.java  logs.txt
+
+mario@DESKTOP-MAK2ELU MINGW64 /d/SI_2023_lab1_215079 (master)
+$ nano logs.txt
